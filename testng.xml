@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/StreamPC/IdeaProjects/saucedemo">
         <classes>
-            <class name="org.inar.saucedemo.InventoryPage">
+            <class name="org.inar.saucedemo.InventoryPageTest">
                 <methods>
                     <include name="allItemsAddToCartBoxClickable"/>
                     <include name="allItemsSelectedToChart"/>

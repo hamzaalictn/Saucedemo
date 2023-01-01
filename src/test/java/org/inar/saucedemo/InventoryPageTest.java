@@ -12,9 +12,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-public class InventoryPage {
-
-
+public class InventoryPageTest {
     WebDriver driver;
     @BeforeSuite
     public void setUpSuite() {
@@ -37,13 +35,13 @@ public class InventoryPage {
     @Test
     public void allItemsAddToCartBoxClickable() {
         List<WebElement> itemsNameElement = driver.findElements(By.xpath("//div[@class='inventory_item_name']"));
-        itemsNameElement.stream().forEach(webElement -> webElement.findElement(By.xpath("//*[@class=\"btn btn_primary btn_small btn_inventory\"]")).click());
+        itemsNameElement.forEach(webElement -> webElement.findElement(By.xpath("//*[@class=\"btn btn_primary btn_small btn_inventory\"]")).click());
     }
 
     @Test
     public void allItemsSelectedToChart() {
-        int numberOfElementsSelected = Integer.valueOf(driver.findElement(By.xpath("//*[@id=\"shopping_cart_container\"]/a/span")).getText());
-        Assert.assertEquals(numberOfElementsSelected, 6);
+
+        Assert.assertEquals(Integer.valueOf(driver.findElement(By.xpath("//*[@id=\"shopping_cart_container\"]/a/span")).getText()), 6);
     }
     @AfterSuite
     public void afterTest() {
